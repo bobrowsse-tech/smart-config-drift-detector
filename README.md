@@ -1,23 +1,23 @@
-# Config Drift Detector
+# Smart Config Drift Detector
 
 Diffs environment configuration across `.env*` files, Kubernetes overlays, and Terraform tfvars — flags keys that are missing, intentionally ignored, or look type-mismatched. Secret **values** are never shown (names and coarse shapes only).
 
 ## Install
 
 ```bash
-git clone https://github.com/bobrowsse-tech/config-drift-detector.git
-cd config-drift-detector
+git clone https://github.com/bobrowsse-tech/smart-config-drift-detector.git
+cd smart-config-drift-detector
 npm install
 npm run package
 npx @vscode/vsce package --no-dependencies
-code --install-extension config-drift-detector-0.1.0.vsix
+code --install-extension smart-config-drift-detector-0.1.0.vsix
 ```
 
 Or press **F5** after `npm install` for an Extension Development Host.
 
 ## Use
 
-Open the **Config Drift Detector** side panel:
+Open the **Smart Config Drift Detector** side panel:
 
 | Action | What it does |
 |---|---|
@@ -48,4 +48,4 @@ Changes to `main` must go through a pull request. See [CONTRIBUTING.md](./CONTRI
 
 ### Extension Development Host
 
-With the local suite umbrella checked out, press **F5** (**Extension + playground**) to load `../playgrounds/config-drift-detector/` as the test workspace.
+With the local suite umbrella checked out, press **F5** (**Extension + playground**) to load `../playgrounds/smart-config-drift-detector/` as the test workspace.
