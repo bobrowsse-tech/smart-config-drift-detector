@@ -17,7 +17,7 @@ function workspaceRoot(): string | undefined {
 function createService(): ConfigDriftService | undefined {
   const root = workspaceRoot();
   if (!root) {
-    vscode.window.showErrorMessage('Config Drift Detector needs an open workspace folder.');
+    vscode.window.showErrorMessage('Smart Config Drift Detector needs an open workspace folder.');
     return undefined;
   }
   return new ConfigDriftService(root);
@@ -52,7 +52,7 @@ async function confirmMappings(
 export function activate(context: vscode.ExtensionContext) {
   const dashboard = new DashboardProvider();
   context.subscriptions.push(
-    vscode.window.registerWebviewViewProvider('config-drift-detectorView', dashboard)
+    vscode.window.registerWebviewViewProvider('smart-config-drift-detectorView', dashboard)
   );
 
   const getReport = () => context.workspaceState.get<DriftReport>(LAST_REPORT_KEY);
@@ -117,7 +117,7 @@ export function activate(context: vscode.ExtensionContext) {
       dashboard.setSummary(
         `${report.summary.missing} missing · ${report.summary.typeMismatch} type-mismatch · ${report.summary.ignored} ignored · ${report.summary.ok} ok`
       );
-      await vscode.commands.executeCommand('config-drift-detectorView.focus');
+      await vscode.commands.executeCommand('smart-config-drift-detectorView.focus');
     })
   );
 
